@@ -122,9 +122,17 @@ public class SudokuModel implements SudokuSolver {
 			}
 		}
 	}
-
+	
+	//return board but not able to manipulate it from outside of class
 	@Override
 	public int[][] getMatrix() {
-		return this.board;
+		int[][] temp = new int[9][9];
+		for(int r = 0; r <9 ; r++) {
+			for( int c = 0; c < 9; c++) {
+				temp[r][c] = board[r][c];
+			}
+		}
+		
+		return temp;
 	}
 }
